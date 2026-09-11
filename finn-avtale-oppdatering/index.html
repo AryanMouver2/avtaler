@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Finn avtale – Mouver</title>
+<style>
+  :root{
+    --bg:#f7f7f5; --card:#ffffff; --ink:#1c1c1c; --muted:#6b6b6b;
+    --border:#e3e2df; --accent:#1f6f4d; --accent-ink:#ffffff;
+    --badge-ok:#eaf5ee; --badge-ok-ink:#1f6f4d;
+    --badge-warn:#fdf3e3; --badge-warn-ink:#8a5a00;
+    --tile-bg:#ffffff; --tile-bg-aktiv:#ffb441; --tile-ink-aktiv:#202020;
+    --star:#d9a400;
+    --hero-bg:#202020; --hero-ink:#f5efe7; --hero-muted:#c9c2b8;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#151513; --card:#1f1f1d; --ink:#f0efec; --muted:#a5a39c;
+      --border:#33322e; --accent:#ffb441; --accent-ink:#231a06;
+      --badge-ok:#183226; --badge-ok-ink:#8fe0b6;
+      --badge-warn:#332711; --badge-warn-ink:#f0c775;
+      --tile-bg:#1f1f1d; --tile-bg-aktiv:#ffb441; --tile-ink-aktiv:#202020;
+      --hero-bg:#0f0f0e; --hero-ink:#f5efe7; --hero-muted:#a5a39c;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#151513; --card:#1f1f1d; --ink:#f0efec; --muted:#a5a39c;
+    --border:#33322e; --accent:#ffb441; --accent-ink:#231a06;
+    --badge-ok:#183226; --badge-ok-ink:#8fe0b6;
+    --badge-warn:#332711; --badge-warn-ink:#f0c775;
+    --tile-bg:#1f1f1d; --tile-bg-aktiv:#ffb441; --tile-ink-aktiv:#202020;
+    --hero-bg:#0f0f0e; --hero-ink:#f5efe7; --hero-muted:#a5a39c;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    padding:0 0 60px;
+  }
+  .wrap{max-width:820px; margin:0 auto; padding:0 16px;}
+
+  .hero{
+    background:var(--hero-bg); color:var(--hero-ink);
+    padding:28px 16px 24px; margin-bottom:20px;
+  }
+  .hero-inner{max-width:820px; margin:0 auto;}
+  .hero-logo{height:34px; width:auto; display:block; margin-bottom:18px;}
+  .hero h1{font-size:1.6rem; margin:0 0 4px; color:var(--hero-ink);}
+  .hero .sub{color:var(--hero-muted); font-size:0.95rem; margin:0 0 18px;}
+  .stats{display:flex; gap:22px; flex-wrap:wrap;}
+  .stat{display:flex; flex-direction:column;}
+  .stat-tall{font-size:1.4rem; font-weight:700; color:var(--accent); line-height:1.1;}
+  .stat-label{font-size:0.78rem; color:var(--hero-muted); margin-top:2px;}
+
+  h1{font-size:1.5rem; margin:0 0 2px;}
+  .sub{color:var(--muted); font-size:0.95rem; margin:0;}
+
+  .sokboks{
+    background:var(--card); border:1px solid var(--border); border-radius:14px;
+    padding:16px; margin-bottom:18px;
+  }
+  .sokboks label{display:block; font-size:0.85rem; color:var(--muted); margin-bottom:6px;}
+  .sok-rad{display:flex; gap:10px; flex-wrap:wrap;}
+  input[type="search"], select{
+    font-size:1rem; padding:10px 12px; border-radius:10px; border:1px solid var(--border);
+    background:var(--bg); color:var(--ink); flex:1 1 220px; min-width:0;
+  }
+
+  .kategori-seksjon{margin-bottom:20px;}
+  .kategori-fliser{
+    display:grid; grid-template-columns:repeat(auto-fill, minmax(96px, 1fr));
+    gap:10px; margin-top:10px;
+  }
+  .flis{
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px;
+    font-size:0.78rem; text-align:center; line-height:1.2;
+    background:var(--tile-bg); border:1px solid var(--border); border-radius:14px;
+    padding:14px 8px; cursor:pointer; color:var(--ink); user-select:none;
+  }
+  .flis-ikon{font-size:1.5rem;}
+  .flis.aktiv{background:var(--tile-bg-aktiv); color:var(--tile-ink-aktiv); border-color:transparent; font-weight:600;}
+  .flis[data-kategori=""]{grid-column: span 2;}
+  .flis[data-kategori=""] .flis-ikon{display:none;}
+
+  .verktoylinje{display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap; margin:14px 2px;}
+  .antall{color:var(--muted); font-size:0.9rem;}
+  .sorter{display:flex; align-items:center; gap:6px; font-size:0.85rem; color:var(--muted);}
+  .sorter select{flex:none; padding:6px 8px; font-size:0.85rem;}
+
+  .seksjon-tittel{font-size:0.8rem; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); margin:20px 2px 8px;}
+
+  .kort{
+    background:var(--card); border:1px solid var(--border); border-left:4px solid var(--kategori-farge, var(--border));
+    border-radius:14px; padding:16px; margin-bottom:12px; scroll-margin-top:16px;
+  }
+  .kort.print-target{}
+  .kort-topp{display:flex; justify-content:space-between; align-items:flex-start; gap:10px; flex-wrap:wrap;}
+  .kort-tittel{display:flex; align-items:center; gap:8px;}
+  .kort h2{font-size:1.1rem; margin:0;}
+  .stjerne{
+    background:none; border:none; cursor:pointer; font-size:1.15rem; line-height:1;
+    color:var(--border); padding:0;
+  }
+  .stjerne.aktiv{color:var(--star);}
+  .kategori{display:flex; align-items:center; gap:6px; color:var(--muted); font-size:0.9rem; margin:4px 0 10px;}
+  .kategori-dott{width:8px; height:8px; border-radius:50%; background:var(--kategori-farge, var(--muted)); flex:none;}
+  .badge{
+    font-size:0.75rem; padding:3px 9px; border-radius:100px; white-space:nowrap;
+    background:var(--badge-ok); color:var(--badge-ok-ink); font-weight:600;
+  }
+  .badge.varsel{background:var(--badge-warn); color:var(--badge-warn-ink);}
+  .felt{margin:8px 0;}
+  .felt-label{font-size:0.75rem; text-transform:uppercase; letter-spacing:.03em; color:var(--muted); margin-bottom:2px;}
+  .felt-verdi{font-size:0.95rem; line-height:1.4;}
+  .kontakter{display:flex; flex-direction:column; gap:10px; margin-top:2px;}
+  .kontakt-rad{display:flex; justify-content:space-between; align-items:flex-start; gap:8px;}
+  .kontakt-region{font-weight:600; font-size:0.85rem;}
+  .kontakt-knapp{
+    flex:none; background:none; border:1px solid var(--border); border-radius:8px;
+    padding:4px 8px; font-size:0.75rem; color:var(--muted); cursor:pointer;
+  }
+  .kontakt-knapp:hover{border-color:var(--accent); color:var(--accent);}
+  .kort-bunn{display:flex; gap:8px; margin-top:14px; flex-wrap:wrap;}
+  .lenke-knapp{
+    font-size:0.8rem; background:none; border:1px solid var(--border); border-radius:8px;
+    padding:6px 10px; color:var(--muted); cursor:pointer;
+  }
+  .lenke-knapp:hover{border-color:var(--accent); color:var(--accent);}
+
+  .tomt, .ingen-treff{color:var(--muted); text-align:center; padding:30px 10px;}
+  .feedback{
+    margin-top:26px; padding:16px; border:1px dashed var(--border); border-radius:14px;
+    text-align:center;
+  }
+  .feedback p{margin:0 0 10px; color:var(--muted); font-size:0.9rem;}
+  button{font-family:inherit;}
+  .hovedknapp{
+    font-size:0.95rem; padding:10px 16px; border-radius:10px; border:none;
+    background:var(--accent); color:var(--accent-ink); cursor:pointer; font-weight:600;
+  }
+  .hovedknapp:hover{opacity:.92}
+  a{color:var(--accent)}
+
+  @media print{
+    .hero, .sokboks, .kategori-seksjon, .verktoylinje, .feedback{display:none !important;}
+    body.print-single .kort:not(.print-target){display:none !important;}
+    body.print-single .kort.print-target{border:1px solid #999; box-shadow:none;}
+  }
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="hero-inner">
+    <img class="hero-logo" src="assets/mouver-logo.jpg" alt="Mouver">
+    <h1>Finn avtale</h1>
+    <p class="sub">Hva trenger du til prosjektet? Velg en kategori eller søk fritt.</p>
+    <div class="stats">
+      <div class="stat"><span class="stat-tall" id="stat-antall">–</span><span class="stat-label">leverandøravtaler</span></div>
+      <div class="stat"><span class="stat-tall" id="stat-kategorier">–</span><span class="stat-label">kategorier</span></div>
+      <div class="stat"><span class="stat-tall" id="stat-mangler">–</span><span class="stat-label">avtaler under innhenting</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="kategori-seksjon">
+    <div class="kategori-fliser" id="kategori-fliser"></div>
+  </div>
+
+  <div class="sokboks">
+    <div class="sok-rad">
+      <div style="flex:1 1 100%">
+        <label for="sok">Søk</label>
+        <input type="search" id="sok" placeholder="F.eks. vindu, verktøy, kjøkken …">
+      </div>
+    </div>
+  </div>
+
+  <div class="verktoylinje">
+    <p class="antall" id="antall"></p>
+    <div class="sorter">
+      <label for="sorter-valg">Sorter:</label>
+      <select id="sorter-valg">
+        <option value="alfabetisk">Alfabetisk</option>
+        <option value="mest-brukt">Mest brukt</option>
+      </select>
+    </div>
+  </div>
+
+  <div id="resultater"></div>
+
+  <div class="feedback">
+    <p>Fant du ikke det du lette etter?</p>
+    <button class="hovedknapp" id="meld-behov">Meld fra om manglende avtale</button>
+  </div>
+</div>
+
+<script>
+const KONTAKT_EPOST = "aaamirmokri@gmail.com"; // midlertidig: erstatt med riktig Mouver-adresse for behovsmeldinger
+const LS_FAVORITTER = "finnavtale_favoritter";
+const LS_BRUK = "finnavtale_bruk";
+
+const KATEGORI_IKONER = [
+  [/vindu|dør/i, "🚪"],
+  [/kjøkken/i, "🍽️"],
+  [/verktøy|festemid/i, "🛠️"],
+  [/avfall|renhold|vask/i, "🗑️"],
+  [/beslag/i, "🔩"],
+  [/isolasjon|lyd/i, "🧱"],
+  [/trapp/i, "🪜"],
+  [/gulv|parkett/i, "🪵"],
+  [/lift|maskin|anlegg/i, "🏗️"],
+  [/kontor/i, "🖇️"],
+  [/grossist/i, "📦"],
+  [/tett|tape|membran/i, "🧴"],
+  [/glass/i, "🪟"],
+  [/rådgivning|konsult|ai/i, "💡"],
+];
+const KATEGORI_FARGER = [
+  "#1f6f4d", "#7a4fb5", "#b5544f", "#3a6ea5", "#b58a2d",
+  "#4f8a8b", "#a05195", "#5a6b7d", "#8d6e63", "#557a46",
+];
+
+let AVTALER = [];
+let AKTIV_KATEGORI = "";
+
+function ikonForKategori(kat){
+  const treff = KATEGORI_IKONER.find(([re]) => re.test(kat || ""));
+  return treff ? treff[1] : "📄";
+}
+
+function fargeForKategori(kat){
+  if(!kat) return null;
+  let sum = 0;
+  for(const c of kat) sum += c.charCodeAt(0);
+  return KATEGORI_FARGER[sum % KATEGORI_FARGER.length];
+}
+
+function hentFavoritter(){
+  try{ return new Set(JSON.parse(localStorage.getItem(LS_FAVORITTER) || "[]")); }
+  catch{ return new Set(); }
+}
+function lagreFavoritter(set){
+  try{ localStorage.setItem(LS_FAVORITTER, JSON.stringify([...set])); }catch{}
+}
+function hentBrukstall(){
+  try{ return JSON.parse(localStorage.getItem(LS_BRUK) || "{}"); }
+  catch{ return {}; }
+}
+function registrerBruk(id){
+  const bruk = hentBrukstall();
+  bruk[id] = (bruk[id] || 0) + 1;
+  try{ localStorage.setItem(LS_BRUK, JSON.stringify(bruk)); }catch{}
+}
+
+function normaliser(s){
+  if(!s) return "";
+  return s.toLowerCase()
+    .replaceAll("æ","ae").replaceAll("ø","o").replaceAll("å","a")
+    .normalize("NFKD").replace(/[̀-ͯ]/g, "");
+}
+
+function forstOrd(kategoriFelt){
+  if(!kategoriFelt) return [];
+  return kategoriFelt.split(",").map(s => s.trim()).filter(Boolean);
+}
+
+function byggKategoriFliser(){
+  const alle = new Set();
+  AVTALER.forEach(a => forstOrd(a.kategori).forEach(k => alle.add(k)));
+  const container = document.getElementById("kategori-fliser");
+  const sortert = [...alle].sort((a,b)=>a.localeCompare("no"));
+
+  const alleFlis = document.createElement("div");
+  alleFlis.className = "flis aktiv";
+  alleFlis.innerHTML = `<span>Alle kategorier</span>`;
+  alleFlis.dataset.kategori = "";
+  container.appendChild(alleFlis);
+
+  sortert.forEach(k => {
+    const flis = document.createElement("div");
+    flis.className = "flis";
+    flis.innerHTML = `<span class="flis-ikon">${ikonForKategori(k)}</span><span>${escapeHtml(k)}</span>`;
+    flis.dataset.kategori = k;
+    container.appendChild(flis);
+  });
+
+  container.addEventListener("click", (e) => {
+    const flis = e.target.closest(".flis");
+    if(!flis) return;
+    AKTIV_KATEGORI = flis.dataset.kategori;
+    [...container.children].forEach(el => el.classList.toggle("aktiv", el === flis));
+    oppdaterVisning();
+  });
+}
+
+function matcherSok(avtale, sokNorm){
+  if(!sokNorm) return true;
+  const felt = [avtale.leverandornavn, avtale.kategori, avtale.produkttyper]
+    .map(normaliser).join(" ");
+  return sokNorm.split(/\s+/).every(ord => felt.includes(ord));
+}
+
+function matcherKategori(avtale){
+  if(!AKTIV_KATEGORI) return true;
+  return forstOrd(avtale.kategori).includes(AKTIV_KATEGORI);
+}
+
+function escapeHtml(s){
+  const d = document.createElement("div");
+  d.textContent = s ?? "";
+  return d.innerHTML;
+}
+
+// Gjør e-postadresser og telefonnumre i en kontakttekst om til klikkbare lenker.
+function linkifiser(tekstEscaped){
+  const mønster = /([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})|(\+?\d(?:[\d\s]{5,}\d))/g;
+  return tekstEscaped.replace(mønster, (treff, epost, tlf) => {
+    if(epost) return `<a href="mailto:${epost}">${epost}</a>`;
+    if(tlf){
+      const rentNummer = tlf.replace(/\s+/g, "");
+      return `<a href="tel:${rentNummer}">${tlf}</a>`;
+    }
+    return treff;
+  });
+}
+
+function renderKontakter(avtale){
+  const kontakter = avtale.kontakter;
+  if(!kontakter || !kontakter.length) return "<div class='felt-verdi'>Ikke registrert</div>";
+  return "<div class='kontakter'>" + kontakter.map((k, i) => `
+    <div class="kontakt-rad">
+      <div>
+        ${k.region ? `<div class="kontakt-region">${escapeHtml(k.region)}</div>` : ""}
+        <div>${linkifiser(escapeHtml(k.tekst))}</div>
+      </div>
+      <button class="kontakt-knapp" data-kopier-id="${avtale.id}" data-kopier-index="${i}">Kopier</button>
+    </div>
+  `).join("") + "</div>";
+}
+
+function renderKort(avtale, favoritter){
+  const manglerAvtale = avtale.status === "mangler_avtaledokument";
+  const erFavoritt = favoritter.has(avtale.id);
+  const forsteKategori = forstOrd(avtale.kategori)[0] || "";
+  const farge = fargeForKategori(forsteKategori);
+
+  return `
+    <div class="kort" id="${avtale.id}" data-id="${avtale.id}" style="${farge ? `--kategori-farge:${farge}` : ""}">
+      <div class="kort-topp">
+        <div class="kort-tittel">
+          <button class="stjerne ${erFavoritt ? "aktiv" : ""}" data-favoritt-id="${avtale.id}" title="Merk som favoritt">${erFavoritt ? "★" : "☆"}</button>
+          <h2>${escapeHtml(avtale.leverandornavn)}</h2>
+        </div>
+        ${manglerAvtale
+          ? `<span class="badge varsel">Avtaledokument ikke mottatt ennå</span>`
+          : `<span class="badge">Aktiv avtale</span>`}
+      </div>
+      ${avtale.kategori ? `<p class="kategori"><span class="kategori-dott"></span>${escapeHtml(avtale.kategori)}</p>` : ""}
+
+      ${avtale.produkttyper ? `
+      <div class="felt">
+        <div class="felt-label">Produkttyper</div>
+        <div class="felt-verdi">${escapeHtml(avtale.produkttyper)}</div>
+      </div>` : ""}
+
+      ${avtale.rabatt_og_bestillingsvilkar ? `
+      <div class="felt">
+        <div class="felt-label">Rabatt- og bestillingsvilkår</div>
+        <div class="felt-verdi">${escapeHtml(avtale.rabatt_og_bestillingsvilkar)}</div>
+      </div>` : ""}
+
+      ${avtale.betalingsfrist ? `
+      <div class="felt">
+        <div class="felt-label">Betalingsfrist</div>
+        <div class="felt-verdi">${escapeHtml(avtale.betalingsfrist)}</div>
+      </div>` : ""}
+
+      <div class="felt">
+        <div class="felt-label">Kontaktperson</div>
+        ${renderKontakter(avtale)}
+      </div>
+
+      <div class="kort-bunn">
+        <button class="lenke-knapp" data-del-id="${avtale.id}">Del lenke</button>
+        <button class="lenke-knapp" data-skriv-id="${avtale.id}">Skriv ut</button>
+      </div>
+    </div>
+  `;
+}
+
+function midlertidigTekst(el, tekst, varighetMs=1500){
+  const opprinnelig = el.textContent;
+  el.textContent = tekst;
+  setTimeout(() => { el.textContent = opprinnelig; }, varighetMs);
+}
+
+function oppdaterVisning(){
+  const sokNorm = normaliser(document.getElementById("sok").value.trim());
+  const sortValg = document.getElementById("sorter-valg").value;
+  const favoritter = hentFavoritter();
+  const bruk = hentBrukstall();
+
+  let treff = AVTALER.filter(a => matcherSok(a, sokNorm) && matcherKategori(a));
+
+  if(sortValg === "mest-brukt"){
+    treff = treff.slice().sort((a,b) => (bruk[b.id]||0) - (bruk[a.id]||0) || a.leverandornavn.localeCompare(b.leverandornavn, "no"));
+  } else {
+    treff = treff.slice().sort((a,b) => a.leverandornavn.localeCompare(b.leverandornavn, "no"));
+  }
+
+  document.getElementById("antall").textContent =
+    treff.length === AVTALER.length
+      ? `${AVTALER.length} leverandøravtaler`
+      : `${treff.length} av ${AVTALER.length} avtaler`;
+
+  const container = document.getElementById("resultater");
+  if(!treff.length){
+    container.innerHTML = `<div class="ingen-treff">Ingen avtaler matchet søket. Prøv et annet ord, eller meld fra nedenfor.</div>`;
+    return;
+  }
+
+  const favTreff = treff.filter(a => favoritter.has(a.id));
+  const resten = treff.filter(a => !favoritter.has(a.id));
+
+  let html = "";
+  if(favTreff.length){
+    html += `<p class="seksjon-tittel">Favoritter</p>`;
+    html += favTreff.map(a => renderKort(a, favoritter)).join("");
+    html += `<p class="seksjon-tittel">Alle leverandører</p>`;
+  }
+  html += resten.map(a => renderKort(a, favoritter)).join("");
+  container.innerHTML = html;
+}
+
+function settOppHandlinger(){
+  document.getElementById("resultater").addEventListener("click", (e) => {
+    const favKnapp = e.target.closest("[data-favoritt-id]");
+    if(favKnapp){
+      const id = favKnapp.dataset.favorittId;
+      const favoritter = hentFavoritter();
+      favoritter.has(id) ? favoritter.delete(id) : favoritter.add(id);
+      lagreFavoritter(favoritter);
+      oppdaterVisning();
+      return;
+    }
+
+    const kopierKnapp = e.target.closest("[data-kopier-id]");
+    if(kopierKnapp){
+      const avtale = AVTALER.find(a => a.id === kopierKnapp.dataset.kopierId);
+      const kontakt = avtale.kontakter[Number(kopierKnapp.dataset.kopierIndex)];
+      const tekst = (kontakt.region ? kontakt.region + ": " : "") + kontakt.tekst;
+      navigator.clipboard?.writeText(tekst).then(() => midlertidigTekst(kopierKnapp, "Kopiert!"));
+      registrerBruk(avtale.id);
+      return;
+    }
+
+    const delKnapp = e.target.closest("[data-del-id]");
+    if(delKnapp){
+      const id = delKnapp.dataset.delId;
+      const lenke = `${location.origin}${location.pathname}#${id}`;
+      navigator.clipboard?.writeText(lenke).then(() => midlertidigTekst(delKnapp, "Lenke kopiert!"));
+      registrerBruk(id);
+      return;
+    }
+
+    const skrivKnapp = e.target.closest("[data-skriv-id]");
+    if(skrivKnapp){
+      const id = skrivKnapp.dataset.skrivId;
+      const kort = document.getElementById(id);
+      kort.classList.add("print-target");
+      document.body.classList.add("print-single");
+      window.print();
+      setTimeout(() => {
+        kort.classList.remove("print-target");
+        document.body.classList.remove("print-single");
+      }, 500);
+      registrerBruk(id);
+      return;
+    }
+
+    const tlfEllerEpost = e.target.closest('a[href^="tel:"], a[href^="mailto:"]');
+    if(tlfEllerEpost){
+      const kort = e.target.closest(".kort");
+      if(kort) registrerBruk(kort.dataset.id);
+    }
+  });
+}
+
+function apneFraLenke(){
+  const id = location.hash.replace("#", "");
+  if(!id) return;
+  const forsok = () => {
+    const el = document.getElementById(id);
+    if(el){ el.scrollIntoView({behavior:"smooth", block:"center"}); el.style.outline = `2px solid var(--accent)`; }
+  };
+  setTimeout(forsok, 100);
+}
+
+function fyllStatistikk(){
+  const kategorier = new Set();
+  AVTALER.forEach(a => forstOrd(a.kategori).forEach(k => kategorier.add(k)));
+  const mangler = AVTALER.filter(a => a.status === "mangler_avtaledokument").length;
+
+  document.getElementById("stat-antall").textContent = AVTALER.length;
+  document.getElementById("stat-kategorier").textContent = kategorier.size;
+  document.getElementById("stat-mangler").textContent = mangler;
+}
+
+async function init(){
+  const res = await fetch("data/avtaler.json");
+  AVTALER = await res.json();
+
+  fyllStatistikk();
+  byggKategoriFliser();
+  settOppHandlinger();
+  oppdaterVisning();
+  apneFraLenke();
+
+  document.getElementById("sok").addEventListener("input", oppdaterVisning);
+  document.getElementById("sorter-valg").addEventListener("change", oppdaterVisning);
+  document.getElementById("meld-behov").addEventListener("click", () => {
+    const sok = document.getElementById("sok").value.trim();
+    const emne = encodeURIComponent("Finn avtale – fant ikke det jeg lette etter");
+    const kropp = encodeURIComponent(
+      `Søkeord jeg brukte: ${sok || "(ingen tekst skrevet inn)"}\n` +
+      `Kategori valgt: ${AKTIV_KATEGORI || "(ingen)"}\n\n` +
+      `Beskriv gjerne kort hva du trengte:\n`
+    );
+    window.location.href = `mailto:${KONTAKT_EPOST}?subject=${emne}&body=${kropp}`;
+  });
+}
+
+init();
+</script>
+</body>
+</html>
