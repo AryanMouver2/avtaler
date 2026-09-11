@@ -75,6 +75,52 @@ def del_opp_kontakter(raw: str):
 # men markert slik at Finn avtale kan vise dem annerledes eller utelate dem).
 MANGLER_AVTALEDOKUMENT = {"service-master-as", "arti-konsult"}
 
+# Kuratert kategorisering for filter/fliser i Finn avtale. Det rå "kategori"-
+# feltet fra CSV-en er ofte en hel setning ("Lift, brakker, byggmaskiner, heis,
+# ...") og gir 50+ meningsløse fliser hvis man bare splitter på komma - derfor
+# mappes hver leverandør manuelt til 1-2 ordentlige kategorier her i stedet.
+# Det rå kategori-feltet vises fortsatt som beskrivelse i selve avtalekortet.
+KATEGORI_TAGS = {
+    "ahlsell": ["Grossist"],
+    "beslagexperten": ["Beslag og festemidler", "Glass og glassvegger"],
+    "bosvik-bygginnredning": ["Glass og glassvegger", "Himling"],
+    "cramo": ["Maskiner, lift og anlegg"],
+    "gilje": ["Dører og vinduer"],
+    "hagen-as": ["Trapp"],
+    "ing-pro": ["Rådgivning og konsulent"],
+    "jke-design": ["Kjøkken"],
+    "magnor-vindu": ["Dører og vinduer"],
+    "maxbo": ["Grossist"],
+    "neumann-bygg": ["Grossist"],
+    "nordic-door": ["Dører og vinduer"],
+    "norprodukter-sale": ["Himling"],
+    "nordan": ["Dører og vinduer"],
+    "norengros": ["Kontorrekvisita"],
+    "ncp-verktoy": ["Verktøy og festemidler"],
+    "paroc": ["Byggisolasjon"],
+    "ramirent": ["Maskiner, lift og anlegg"],
+    "rollform": ["Byggematerialer"],
+    "rockfon": ["Byggisolasjon", "Himling"],
+    "siga-swiss": ["Tetting og membraner"],
+    "strai-kjokken": ["Kjøkken"],
+    "triplan": ["Glass og glassvegger"],
+    "westco-as": ["Avfallshåndtering"],
+    "naboen-as": ["Maskiner, lift og anlegg", "Avfallshåndtering"],
+    "service-master-as": ["Renhold og vask"],
+    "daloc-norge-as": ["Dører og vinduer"],
+    "bo-andren-norge-as": ["Gulv"],
+    "hth-norge": ["Kjøkken"],
+    "skau-gulv": ["Gulv"],
+    "norsk-gjenvinning": ["Avfallshåndtering"],
+    "trapperingen": ["Trapp"],
+    "retura": ["Avfallshåndtering"],
+    "sorbo-industribeslag": ["Beslag og festemidler"],
+    "sigdal-kjokken": ["Kjøkken", "Garderobe og bad"],
+    "aubo-kjokken": ["Kjøkken", "Garderobe og bad"],
+    "uldal-as": ["Dører og vinduer"],
+    "arti-konsult": ["Rådgivning og konsulent"],
+}
+
 
 def parse_rad(rad):
     navn, kategori, produkttyper, vilkar, frist, kontakt_raw = (
@@ -86,7 +132,8 @@ def parse_rad(rad):
     return {
         "id": id_,
         "leverandornavn": navn,
-        "kategori": kategori or None,
+        "kategori": kategori or None,  # rå fritekst fra CSV, vises som beskrivelse i kortet
+        "kategori_tags": KATEGORI_TAGS.get(id_, []),  # kuratert, brukes til filter/fliser
         "produkttyper": produkttyper or None,
         "rabatt_og_bestillingsvilkar": vilkar or None,
         "betalingsfrist": frist or None,

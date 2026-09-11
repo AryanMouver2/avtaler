@@ -3,6 +3,9 @@
     "id": "ahlsell",
     "leverandornavn": "Ahlsell",
     "kategori": "Grossist vvs, elektro, verktøy.",
+    "kategori_tags": [
+      "Grossist"
+    ],
     "produkttyper": "Grossist vvs, elektro, verktøy",
     "rabatt_og_bestillingsvilkar": "mouver priser ligger inne i kundeportalen",
     "betalingsfrist": "45 dager",
@@ -20,6 +23,10 @@
     "id": "beslagexperten",
     "leverandornavn": "Beslagexperten",
     "kategori": "Beslag",
+    "kategori_tags": [
+      "Beslag og festemidler",
+      "Glass og glassvegger"
+    ],
     "produkttyper": "Glassrekkverk",
     "rabatt_og_bestillingsvilkar": "20% på de fleste produkter unntatt Rør og håndløpere, glass på bestilling og lagerførte glass",
     "betalingsfrist": "30",
@@ -37,6 +44,10 @@
     "id": "bosvik-bygginnredning",
     "leverandornavn": "Bosvik Bygginnredning",
     "kategori": "Skreddersydde interiørløsninger",
+    "kategori_tags": [
+      "Glass og glassvegger",
+      "Himling"
+    ],
     "produkttyper": "Glassvegger, spilevegger, himlinger spesialtilpasset interiør",
     "rabatt_og_bestillingsvilkar": "Se egen prisliste inne på teams: https://mouverno.sharepoint.com/:b:/s/Mouver-Prosjektlederne/EepBMB5xjMxIpCdFJlJCUCYBeRovBxu36aZGmmemdD9YOw?e=S4V7nN",
     "betalingsfrist": "30",
@@ -54,6 +65,9 @@
     "id": "cramo",
     "leverandornavn": "Cramo",
     "kategori": "Lift, brakker, byggmaskiner, heis, teleskoptruck, anleggmaskiner, Containere, letthus, toalett",
+    "kategori_tags": [
+      "Maskiner, lift og anlegg"
+    ],
     "produkttyper": "Lift, brakker, byggmaskiner, heis, teleskoptruck, anleggmaskiner, Containere, letthus, toalett",
     "rabatt_og_bestillingsvilkar": "Opp til 90% rabatt, se priseliste her: https://mouverno.sharepoint.com/:b:/s/Mouver-Prosjektlederne/ERC0L40WPjxHmd4dg5e4BFMBZCGgJQ4fz_EOJXzCdyVKpA?e=OOcAbZ",
     "betalingsfrist": "30",
@@ -71,6 +85,9 @@
     "id": "gilje",
     "leverandornavn": "Gilje",
     "kategori": "vinduer og dører",
+    "kategori_tags": [
+      "Dører og vinduer"
+    ],
     "produkttyper": "Vindu, balkong og skyvedører, ytterdører",
     "rabatt_og_bestillingsvilkar": "-57% på vindu, balkong og skyvedører, -42% på ytterdører",
     "betalingsfrist": "30",
@@ -92,6 +109,9 @@
     "id": "hagen-as",
     "leverandornavn": "Hagen AS",
     "kategori": "Trapp",
+    "kategori_tags": [
+      "Trapp"
+    ],
     "produkttyper": "Stryntrapp, Escalia",
     "rabatt_og_bestillingsvilkar": "Stryntrappa: 35% fakturarabatt, plass til mer: 14% fakturarabatt, Escalia: PPF, Utetrapper: PPF",
     "betalingsfrist": "30",
@@ -117,6 +137,9 @@
     "id": "ing-pro",
     "leverandornavn": "Ing Pro",
     "kategori": "Teknisk rådgivning",
+    "kategori_tags": [
+      "Rådgivning og konsulent"
+    ],
     "produkttyper": "prefabrikkerte konstruksjoner",
     "rabatt_og_bestillingsvilkar": "Se egen prisliste https://mouverno.sharepoint.com/:b:/s/MouverGruppen2/EXbk0VDXV_hKoDhn0HEiARwBIJQMJskw4yVW2egJvXwfxA?e=XYtbOp",
     "betalingsfrist": "14",
@@ -134,6 +157,9 @@
     "id": "jke-design",
     "leverandornavn": "JKE Design",
     "kategori": "Kjøkken",
+    "kategori_tags": [
+      "Kjøkken"
+    ],
     "produkttyper": "Kjøkken",
     "rabatt_og_bestillingsvilkar": "https://mouverno.sharepoint.com/:b:/r/sites/MouverGruppen2/Shared%20Documents/General/Avtaler%20fra%20Leverand%C3%B8rer/JKE%20Design/JKE%20Design%2030.04.24.pdf?csf=1&web=1&e=otTCGf",
     "betalingsfrist": "30",
@@ -151,6 +177,9 @@
     "id": "magnor-vindu",
     "leverandornavn": "Magnor vindu",
     "kategori": "Vindu, balkong og skyvedører,",
+    "kategori_tags": [
+      "Dører og vinduer"
+    ],
     "produkttyper": "Vindu, balkong og skyvedører,",
     "rabatt_og_bestillingsvilkar": "Pris på forespørsel",
     "betalingsfrist": "30 dager",
@@ -180,6 +209,9 @@
     "id": "maxbo",
     "leverandornavn": "Maxbo",
     "kategori": "Grossist",
+    "kategori_tags": [
+      "Grossist"
+    ],
     "produkttyper": "Dører, vindu, verktøy, arbeidstøy, festemilder",
     "rabatt_og_bestillingsvilkar": "Pris på forespørsel",
     "betalingsfrist": "45",
@@ -197,6 +229,9 @@
     "id": "neumann-bygg",
     "leverandornavn": "Neumann bygg",
     "kategori": "Grossist",
+    "kategori_tags": [
+      "Grossist"
+    ],
     "produkttyper": "Dører, vindu, verktøy, arbeidstøy, festemilder",
     "rabatt_og_bestillingsvilkar": "Pris på forespørsel",
     "betalingsfrist": "30",
@@ -214,6 +249,9 @@
     "id": "nordic-door",
     "leverandornavn": "Nordic Door",
     "kategori": "Dører",
+    "kategori_tags": [
+      "Dører og vinduer"
+    ],
     "produkttyper": "Dør",
     "rabatt_og_bestillingsvilkar": "45% rabatt + pris på forespørsel",
     "betalingsfrist": "45",
@@ -231,6 +269,9 @@
     "id": "norprodukter-sale",
     "leverandornavn": "Norprodukter Sale",
     "kategori": "Himling",
+    "kategori_tags": [
+      "Himling"
+    ],
     "produkttyper": "metall, pet, treull, steinull, våtpress, tre og gips",
     "rabatt_og_bestillingsvilkar": "Prisliste + prosjektpriser på større anbud",
     "betalingsfrist": "45",
@@ -248,6 +289,9 @@
     "id": "nordan",
     "leverandornavn": "NorDan",
     "kategori": "Vindu og dører",
+    "kategori_tags": [
+      "Dører og vinduer"
+    ],
     "produkttyper": "Vinduer, balkongdører , skyverdører, ytterdører",
     "rabatt_og_bestillingsvilkar": "Vinduer, balkongdører , skyverdører har 50%, Ytterdører: 42%. Prosjekt er på ppf",
     "betalingsfrist": "30",
@@ -269,6 +313,9 @@
     "id": "norengros",
     "leverandornavn": "NorEngros",
     "kategori": "Kontor- og datarekvisita",
+    "kategori_tags": [
+      "Kontorrekvisita"
+    ],
     "produkttyper": "Kontorrekvesita, møbler, renholdsprodukter, storhusholdning, embalasje og arbeidstøy.",
     "rabatt_og_bestillingsvilkar": "Prisliste",
     "betalingsfrist": "30",
@@ -286,6 +333,9 @@
     "id": "ncp-verktoy",
     "leverandornavn": "NCP Verktøy",
     "kategori": "Festemidler, verktøy m.m",
+    "kategori_tags": [
+      "Verktøy og festemidler"
+    ],
     "produkttyper": "Festemidler, verktøy, Arbeidstøy",
     "rabatt_og_bestillingsvilkar": "Prisliste- Forespør pris på anbud",
     "betalingsfrist": "45",
@@ -303,6 +353,9 @@
     "id": "paroc",
     "leverandornavn": "Paroc",
     "kategori": "Byggisolasjon",
+    "kategori_tags": [
+      "Byggisolasjon"
+    ],
     "produkttyper": "Steinull",
     "rabatt_og_bestillingsvilkar": "53,5% rabatt - prisliste for tillegstjester",
     "betalingsfrist": "30",
@@ -320,6 +373,9 @@
     "id": "ramirent",
     "leverandornavn": "Ramirent",
     "kategori": "Lift, brakker, byggmaskiner, heis, teleskoptruck, anleggmaskiner, Containere, letthus, toalett",
+    "kategori_tags": [
+      "Maskiner, lift og anlegg"
+    ],
     "produkttyper": "Lifter, brakker, byggmaskiner, heis, teleskoptruck, anleggmaskiner, Containere, letthus, toalett",
     "rabatt_og_bestillingsvilkar": "Prisliste",
     "betalingsfrist": "30",
@@ -345,6 +401,9 @@
     "id": "rollform",
     "leverandornavn": "Rollform",
     "kategori": null,
+    "kategori_tags": [
+      "Byggematerialer"
+    ],
     "produkttyper": null,
     "rabatt_og_bestillingsvilkar": "Prislister",
     "betalingsfrist": "30",
@@ -362,6 +421,10 @@
     "id": "rockfon",
     "leverandornavn": "Rockfon",
     "kategori": "Lydisolering",
+    "kategori_tags": [
+      "Byggisolasjon",
+      "Himling"
+    ],
     "produkttyper": "Akustiske løsninger for tak og vegger",
     "rabatt_og_bestillingsvilkar": "Rabattmatrise",
     "betalingsfrist": "45",
@@ -379,6 +442,9 @@
     "id": "siga-swiss",
     "leverandornavn": "Siga Swiss",
     "kategori": "Vind og lufttettning",
+    "kategori_tags": [
+      "Tetting og membraner"
+    ],
     "produkttyper": "Tape, membraner, lim- og fugemasser, Primer m.m",
     "rabatt_og_bestillingsvilkar": "Prisliste- egne priser på større anbud",
     "betalingsfrist": "45",
@@ -396,6 +462,9 @@
     "id": "strai-kjokken",
     "leverandornavn": "Strai Kjøkken",
     "kategori": "Kjøkken",
+    "kategori_tags": [
+      "Kjøkken"
+    ],
     "produkttyper": "Kjøkken",
     "rabatt_og_bestillingsvilkar": "Rabattmatrise 20-40% rabatt, se avtaledokument",
     "betalingsfrist": "30",
@@ -413,6 +482,9 @@
     "id": "triplan",
     "leverandornavn": "Triplan",
     "kategori": "Fullglassvegger m.m",
+    "kategori_tags": [
+      "Glass og glassvegger"
+    ],
     "produkttyper": "Fullglassvegger m.m",
     "rabatt_og_bestillingsvilkar": "Prismatrise på teams",
     "betalingsfrist": "45",
@@ -430,6 +502,9 @@
     "id": "westco-as",
     "leverandornavn": "Westco as",
     "kategori": "Avfallshåntering",
+    "kategori_tags": [
+      "Avfallshåndtering"
+    ],
     "produkttyper": "Avfall og gjenvinningstjenester",
     "rabatt_og_bestillingsvilkar": "Faste priser på småjobber, innhent egne priser ved anbud/prosjekt.",
     "betalingsfrist": "45",
@@ -447,6 +522,10 @@
     "id": "naboen-as",
     "leverandornavn": "Naboen AS",
     "kategori": "Utstyr, Verktøy, Maskiner, lift, rengjøring, avfallshåndtering, støv og vannsuger, byggheis, varme, avfukter,strøm, transport",
+    "kategori_tags": [
+      "Maskiner, lift og anlegg",
+      "Avfallshåndtering"
+    ],
     "produkttyper": "Utstyr, Verktøy, Maskiner, lifter, rengjøring, avfallshåndtering, støv og vannsuger, byggheis, varme, avfukter,strøm, transport",
     "rabatt_og_bestillingsvilkar": "Har egne priser på prosjekt og Ramme. Se prislsite eller kontakt Naboen for pris.",
     "betalingsfrist": "45",
@@ -464,6 +543,9 @@
     "id": "service-master-as",
     "leverandornavn": "Service Master AS",
     "kategori": "vask, RTB, Renhold",
+    "kategori_tags": [
+      "Renhold og vask"
+    ],
     "produkttyper": "Byggvask, Fasadevask, Vinduspuss, RTB, Brakkerengjøring, Renhold",
     "rabatt_og_bestillingsvilkar": "Prosjektbasert bestillinger: 557,- i timen eks mva, Rammeavtale kr 650 i timen eks mva, Egne priser finnes i mappen. https://mouverno.sharepoint.com/:f:/s/Mouver-Prosjektlederne/Eud9Saif_6hNl27C-WgfFEsB9mYWfpihnnEFoZDuK2E0hg?e=h2jHxS",
     "betalingsfrist": "45",
@@ -481,6 +563,9 @@
     "id": "daloc-norge-as",
     "leverandornavn": "Daloc Norge AS",
     "kategori": "Dører",
+    "kategori_tags": [
+      "Dører og vinduer"
+    ],
     "produkttyper": "Dører",
     "rabatt_og_bestillingsvilkar": "32% rabatt + egne prosjektpriser til anbudsforespørsler",
     "betalingsfrist": "30",
@@ -498,6 +583,9 @@
     "id": "bo-andren-norge-as",
     "leverandornavn": "Bo Andrén Norge AS",
     "kategori": "Gulv",
+    "kategori_tags": [
+      "Gulv"
+    ],
     "produkttyper": "Parkett",
     "rabatt_og_bestillingsvilkar": "Prisliste i avtalen, egne priser ved anbud",
     "betalingsfrist": "30",
@@ -515,6 +603,9 @@
     "id": "hth-norge",
     "leverandornavn": "HTH Norge",
     "kategori": "Kjøkken",
+    "kategori_tags": [
+      "Kjøkken"
+    ],
     "produkttyper": "Kjøkken",
     "rabatt_og_bestillingsvilkar": "Prisliste i avtalen, egne priser ved anbud",
     "betalingsfrist": "45",
@@ -532,6 +623,9 @@
     "id": "skau-gulv",
     "leverandornavn": "Skau gulv",
     "kategori": "Gulv",
+    "kategori_tags": [
+      "Gulv"
+    ],
     "produkttyper": "Parkett, parket laminat, ferdig lagt",
     "rabatt_og_bestillingsvilkar": "Har egne priser på prosjekt og Ramme. Se prislsite eller kontakt Skau Gulv for pris.",
     "betalingsfrist": "45",
@@ -549,6 +643,9 @@
     "id": "norsk-gjenvinning",
     "leverandornavn": "Norsk Gjenvinning",
     "kategori": "Avfallshåndtering",
+    "kategori_tags": [
+      "Avfallshåndtering"
+    ],
     "produkttyper": "Avfall og gjenvinningstjenester",
     "rabatt_og_bestillingsvilkar": "NGN Prisliste.xlsx",
     "betalingsfrist": "45 dager",
@@ -566,6 +663,9 @@
     "id": "trapperingen",
     "leverandornavn": "Trapperingen",
     "kategori": "Trapp",
+    "kategori_tags": [
+      "Trapp"
+    ],
     "produkttyper": "Trapp, Stella serien og øvrige modeller",
     "rabatt_og_bestillingsvilkar": "Se prisliste, pris gis ved forespørsel",
     "betalingsfrist": "30 dager",
@@ -583,6 +683,9 @@
     "id": "retura",
     "leverandornavn": "Retura",
     "kategori": "Avfallshåndtering",
+    "kategori_tags": [
+      "Avfallshåndtering"
+    ],
     "produkttyper": "Avfall og gjenvinningstjenester",
     "rabatt_og_bestillingsvilkar": "Vedlegg 1 - Prismatrise Mouver.xlsx",
     "betalingsfrist": "45 dager",
@@ -600,6 +703,9 @@
     "id": "sorbo-industribeslag",
     "leverandornavn": "Sørbø Industribeslag",
     "kategori": "Beslag og Festemidler",
+    "kategori_tags": [
+      "Beslag og festemidler"
+    ],
     "produkttyper": "beslag, aluminium, tetting, festemidler",
     "rabatt_og_bestillingsvilkar": "Pris på forespørsel",
     "betalingsfrist": "45 dager",
@@ -629,6 +735,10 @@
     "id": "sigdal-kjokken",
     "leverandornavn": "Sigdal Kjøkken",
     "kategori": "Kjøkken og garderober",
+    "kategori_tags": [
+      "Kjøkken",
+      "Garderobe og bad"
+    ],
     "produkttyper": "Kjøkken og garderober",
     "rabatt_og_bestillingsvilkar": "Pris på forespørsel hos lokal forhandler",
     "betalingsfrist": "30",
@@ -646,6 +756,10 @@
     "id": "aubo-kjokken",
     "leverandornavn": "Aubo Kjøkken",
     "kategori": "Kjøkken, garderober og bad",
+    "kategori_tags": [
+      "Kjøkken",
+      "Garderobe og bad"
+    ],
     "produkttyper": "Kjøkken, bad og garderober",
     "rabatt_og_bestillingsvilkar": "Pris på førespørsel",
     "betalingsfrist": "30",
@@ -663,6 +777,9 @@
     "id": "uldal-as",
     "leverandornavn": "Uldal AS",
     "kategori": "Dør og vindu",
+    "kategori_tags": [
+      "Dører og vinduer"
+    ],
     "produkttyper": "Dør og vindu",
     "rabatt_og_bestillingsvilkar": null,
     "betalingsfrist": null,
@@ -688,6 +805,9 @@
     "id": "arti-konsult",
     "leverandornavn": "Arti konsult",
     "kategori": "AI - kurs og div",
+    "kategori_tags": [
+      "Rådgivning og konsulent"
+    ],
     "produkttyper": "AI",
     "rabatt_og_bestillingsvilkar": null,
     "betalingsfrist": null,
