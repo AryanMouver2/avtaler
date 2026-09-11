@@ -1,0 +1,704 @@
+[
+  {
+    "id": "ahlsell",
+    "leverandornavn": "Ahlsell",
+    "kategori": "Grossist vvs, elektro, verktøy.",
+    "produkttyper": "Grossist vvs, elektro, verktøy",
+    "rabatt_og_bestillingsvilkar": "mouver priser ligger inne i kundeportalen",
+    "betalingsfrist": "45 dager",
+    "kontakter": [
+      {
+        "region": null,
+        "tekst": "rune.jakobsen2@ahlsell.no, tlf: 90951519"
+      }
+    ],
+    "gyldig_til": null,
+    "sist_oppdatert": null,
+    "status": "har_avtale"
+  },
+  {
+    "id": "beslagexperten",
+    "leverandornavn": "Beslagexperten",
+    "kategori": "Beslag",
+    "produkttyper": "Glassrekkverk",
+    "rabatt_og_bestillingsvilkar": "20% på de fleste produkter unntatt Rør og håndløpere, glass på bestilling og lagerførte glass",
+    "betalingsfrist": "30",
+    "kontakter": [
+      {
+        "region": null,
+        "tekst": "Daglig leder -Simen Mastereid - simen@beslagexperten.no - 40407950"
+      }
+    ],
+    "gyldig_til": null,
+    "sist_oppdatert": null,
+    "status": "har_avtale"
+  },
+  {
+    "id": "bosvik-bygginnredning",
+    "leverandornavn": "Bosvik Bygginnredning",
+    "kategori": "Skreddersydde interiørløsninger",
+    "produkttyper": "Glassvegger, spilevegger, himlinger spesialtilpasset interiør",
+    "rabatt_og_bestillingsvilkar": "Se egen prisliste inne på teams: https://mouverno.sharepoint.com/:b:/s/Mouver-Prosjektlederne/EepBMB5xjMxIpCdFJlJCUCYBeRovBxu36aZGmmemdD9YOw?e=S4V7nN",
+    "betalingsfrist": "30",
+    "kontakter": [
+      {
+        "region": null,
+        "tekst": "Navn: Christian Axelsen christian@bosvikbi.no Telefonnummer: 40 41 38 47 E-postadresse: christian@bosvikbi.no Navn: Halvard Skaaland Telefonnummer: 40 41 38 58 E-postadresse: halvard@bosvikbi.no Prosjektering: Navn: Jan Terje Rønningbakken Telefonnummer: 40 20 12 12 E-postadresse: jan.terje@bosvikbi.no Navn John S Hasåsmyr Telefonnummer: 40 41 38 54 E-postadresse: john.sigvart@bosvikbi.no Frakt: Navn: Christoffer Hansson Larsen Telefonnummer: 991 65 846 E-postadresse: christoffer@bosvikbi.no"
+      }
+    ],
+    "gyldig_til": null,
+    "sist_oppdatert": null,
+    "status": "har_avtale"
+  },
+  {
+    "id": "cramo",
+    "leverandornavn": "Cramo",
+    "kategori": "Lift, brakker, byggmaskiner, heis, teleskoptruck, anleggmaskiner, Containere, letthus, toalett",
+    "produkttyper": "Lift, brakker, byggmaskiner, heis, teleskoptruck, anleggmaskiner, Containere, letthus, toalett",
+    "rabatt_og_bestillingsvilkar": "Opp til 90% rabatt, se priseliste her: https://mouverno.sharepoint.com/:b:/s/Mouver-Prosjektlederne/ERC0L40WPjxHmd4dg5e4BFMBZCGgJQ4fz_EOJXzCdyVKpA?e=OOcAbZ",
+    "betalingsfrist": "30",
+    "kontakter": [
+      {
+        "region": null,
+        "tekst": "Selger Rogaland Holtet Kenth <kenth.holtet@cramo.com> 941 12 270"
+      }
+    ],
+    "gyldig_til": null,
+    "sist_oppdatert": null,
+    "status": "har_avtale"
+  },
+  {
+    "id": "gilje",
+    "leverandornavn": "Gilje",
+    "kategori": "vinduer og dører",
+    "produkttyper": "Vindu, balkong og skyvedører, ytterdører",
+    "rabatt_og_bestillingsvilkar": "-57% på vindu, balkong og skyvedører, -42% på ytterdører",
+    "betalingsfrist": "30",
+    "kontakter": [
+      {
+        "region": "Rogaland",
+        "tekst": "Kjeld Madsen, kjeldm@gilje.no, tlf: 57611400"
+      },
+      {
+        "region": "Agder",
+        "tekst": "Guttorm Gulowsen Tlf: 95992525 Mail: Guttorm@gilje.no Vesltandet : Anne Marie Hjorth, M: 915 10 125, annemarie@gilje.no"
+      }
+    ],
+    "gyldig_til": null,
+    "sist_oppdatert": null,
+    "status": "har_avtale"
+  },
+  {
+    "id": "hagen-as",
+    "leverandornavn": "Hagen AS",
+    "kategori": "Trapp",
+    "produkttyper": "Stryntrapp, Escalia",
+    "rabatt_og_bestillingsvilkar": "Stryntrappa: 35% fakturarabatt, plass til mer: 14% fakturarabatt, Escalia: PPF, Utetrapper: PPF",
+    "betalingsfrist": "30",
+    "kontakter": [
+      {
+        "region": "Rogaland",
+        "tekst": "Johannes Velde- Mobil 48134517 mail: johannes.velde@hagen.eu"
+      },
+      {
+        "region": "Agder",
+        "tekst": "Eirik Follerås mobil 90982639 mail: eirik.folleraas@hagen.eu"
+      },
+      {
+        "region": "Bergen",
+        "tekst": "Randi Jordan, mobil: 480 78 003 mail: randi.jordan@hagen.eu"
+      }
+    ],
+    "gyldig_til": null,
+    "sist_oppdatert": null,
+    "status": "har_avtale"
+  },
+  {
+    "id": "ing-pro",
+    "leverandornavn": "Ing Pro",
+    "kategori": "Teknisk rådgivning",
+    "produkttyper": "prefabrikkerte konstruksjoner",
+    "rabatt_og_bestillingsvilkar": "Se egen prisliste https://mouverno.sharepoint.com/:b:/s/MouverGruppen2/EXbk0VDXV_hKoDhn0HEiARwBIJQMJskw4yVW2egJvXwfxA?e=XYtbOp",
+    "betalingsfrist": "14",
+    "kontakter": [
+      {
+        "region": null,
+        "tekst": "Daglig Leder - Svein Myklebust <svein@tretec.no> - 97044095"
+      }
+    ],
+    "gyldig_til": null,
+    "sist_oppdatert": null,
+    "status": "har_avtale"
+  },
+  {
+    "id": "jke-design",
+    "leverandornavn": "JKE Design",
+    "kategori": "Kjøkken",
+    "produkttyper": "Kjøkken",
+    "rabatt_og_bestillingsvilkar": "https://mouverno.sharepoint.com/:b:/r/sites/MouverGruppen2/Shared%20Documents/General/Avtaler%20fra%20Leverand%C3%B8rer/JKE%20Design/JKE%20Design%2030.04.24.pdf?csf=1&web=1&e=otTCGf",
+    "betalingsfrist": "30",
+    "kontakter": [
+      {
+        "region": null,
+        "tekst": "Mogens Bech <mb@jke-forus.no> 98242428"
+      }
+    ],
+    "gyldig_til": null,
+    "sist_oppdatert": null,
+    "status": "har_avtale"
+  },
+  {
+    "id": "magnor-vindu",
+    "leverandornavn": "Magnor vindu",
+    "kategori": "Vindu, balkong og skyvedører,",
+    "produkttyper": "Vindu, balkong og skyvedører,",
+    "rabatt_og_bestillingsvilkar": "Pris på forespørsel",
+    "betalingsfrist": "30 dager",
+    "kontakter": [
+      {
+        "region": "ROGALAND",
+        "tekst": "Sveinung Gilje 45 27 98 40 osg@hvm.no"
+      },
+      {
+        "region": "AGDER",
+        "tekst": "Sveinung Gilje 45 27 98 40 osg@hvm.no"
+      },
+      {
+        "region": "HORDALAND",
+        "tekst": "Erling Kjerrgård 907 23 203 ek@hvm.no"
+      },
+      {
+        "region": "SOGN & FJORDANE",
+        "tekst": "Vidar Hjelle 901 85 966 vh@hvm.no"
+      }
+    ],
+    "gyldig_til": null,
+    "sist_oppdatert": null,
+    "status": "har_avtale"
+  },
+  {
+    "id": "maxbo",
+    "leverandornavn": "Maxbo",
+    "kategori": "Grossist",
+    "produkttyper": "Dører, vindu, verktøy, arbeidstøy, festemilder",
+    "rabatt_og_bestillingsvilkar": "Pris på forespørsel",
+    "betalingsfrist": "45",
+    "kontakter": [
+      {
+        "region": null,
+        "tekst": "Vågane, Nikolai <Nikolai.Vagane@lovenskiold.no>"
+      }
+    ],
+    "gyldig_til": null,
+    "sist_oppdatert": null,
+    "status": "har_avtale"
+  },
+  {
+    "id": "neumann-bygg",
+    "leverandornavn": "Neumann bygg",
+    "kategori": "Grossist",
+    "produkttyper": "Dører, vindu, verktøy, arbeidstøy, festemilder",
+    "rabatt_og_bestillingsvilkar": "Pris på forespørsel",
+    "betalingsfrist": "30",
+    "kontakter": [
+      {
+        "region": null,
+        "tekst": "For Rogaland: Andreas Nielsen <ani.bryne@neumann.no>, for Sørlandet: Trond Solvik - ts.kristiansand@neumann.no - 94 80 22 81"
+      }
+    ],
+    "gyldig_til": null,
+    "sist_oppdatert": null,
+    "status": "har_avtale"
+  },
+  {
+    "id": "nordic-door",
+    "leverandornavn": "Nordic Door",
+    "kategori": "Dører",
+    "produkttyper": "Dør",
+    "rabatt_og_bestillingsvilkar": "45% rabatt + pris på forespørsel",
+    "betalingsfrist": "45",
+    "kontakter": [
+      {
+        "region": null,
+        "tekst": "Salg <salg@nordicdoor.no> Edgar Haugskott <edgar.haugskott@nordicdoor.no> tlf 46796810"
+      }
+    ],
+    "gyldig_til": null,
+    "sist_oppdatert": null,
+    "status": "har_avtale"
+  },
+  {
+    "id": "norprodukter-sale",
+    "leverandornavn": "Norprodukter Sale",
+    "kategori": "Himling",
+    "produkttyper": "metall, pet, treull, steinull, våtpress, tre og gips",
+    "rabatt_og_bestillingsvilkar": "Prisliste + prosjektpriser på større anbud",
+    "betalingsfrist": "45",
+    "kontakter": [
+      {
+        "region": null,
+        "tekst": "Laila Hetland Mob : 405 37 554 Mail: laila@norprodukter-sale.no"
+      }
+    ],
+    "gyldig_til": null,
+    "sist_oppdatert": null,
+    "status": "har_avtale"
+  },
+  {
+    "id": "nordan",
+    "leverandornavn": "NorDan",
+    "kategori": "Vindu og dører",
+    "produkttyper": "Vinduer, balkongdører , skyverdører, ytterdører",
+    "rabatt_og_bestillingsvilkar": "Vinduer, balkongdører , skyverdører har 50%, Ytterdører: 42%. Prosjekt er på ppf",
+    "betalingsfrist": "30",
+    "kontakter": [
+      {
+        "region": "Agder",
+        "tekst": "Kjetil Rossebø, Kjetil.rossebo@nordan.no, Telefon: +47 46620131"
+      },
+      {
+        "region": "Bergen",
+        "tekst": "Per Helge Solli, mail: Per.helge.solli@nordan.no tlf:46620266 Thomas Hodne, Mail: Thomas.hodne@nordan.no Tlf: 92570300"
+      }
+    ],
+    "gyldig_til": null,
+    "sist_oppdatert": null,
+    "status": "har_avtale"
+  },
+  {
+    "id": "norengros",
+    "leverandornavn": "NorEngros",
+    "kategori": "Kontor- og datarekvisita",
+    "produkttyper": "Kontorrekvesita, møbler, renholdsprodukter, storhusholdning, embalasje og arbeidstøy.",
+    "rabatt_og_bestillingsvilkar": "Prisliste",
+    "betalingsfrist": "30",
+    "kontakter": [
+      {
+        "region": null,
+        "tekst": "Vetle Grimstvedt tlf: 476 19 121 vg@norengros.no"
+      }
+    ],
+    "gyldig_til": null,
+    "sist_oppdatert": null,
+    "status": "har_avtale"
+  },
+  {
+    "id": "ncp-verktoy",
+    "leverandornavn": "NCP Verktøy",
+    "kategori": "Festemidler, verktøy m.m",
+    "produkttyper": "Festemidler, verktøy, Arbeidstøy",
+    "rabatt_og_bestillingsvilkar": "Prisliste- Forespør pris på anbud",
+    "betalingsfrist": "45",
+    "kontakter": [
+      {
+        "region": null,
+        "tekst": "Frank Pedersen Mob: 483 28 488 E-post: frank@ncpverktoy.no"
+      }
+    ],
+    "gyldig_til": null,
+    "sist_oppdatert": null,
+    "status": "har_avtale"
+  },
+  {
+    "id": "paroc",
+    "leverandornavn": "Paroc",
+    "kategori": "Byggisolasjon",
+    "produkttyper": "Steinull",
+    "rabatt_og_bestillingsvilkar": "53,5% rabatt - prisliste for tillegstjester",
+    "betalingsfrist": "30",
+    "kontakter": [
+      {
+        "region": null,
+        "tekst": "Eric Breiland 99226006 | Viktig at det sendes mail til begge ved henvendelser: \"Eric.Breiland@owenscorning.com + ordre.no@paroc.com\""
+      }
+    ],
+    "gyldig_til": null,
+    "sist_oppdatert": null,
+    "status": "har_avtale"
+  },
+  {
+    "id": "ramirent",
+    "leverandornavn": "Ramirent",
+    "kategori": "Lift, brakker, byggmaskiner, heis, teleskoptruck, anleggmaskiner, Containere, letthus, toalett",
+    "produkttyper": "Lifter, brakker, byggmaskiner, heis, teleskoptruck, anleggmaskiner, Containere, letthus, toalett",
+    "rabatt_og_bestillingsvilkar": "Prisliste",
+    "betalingsfrist": "30",
+    "kontakter": [
+      {
+        "region": "Rogaland",
+        "tekst": "ivar.skjeveland@ramirent.no 911 05 983"
+      },
+      {
+        "region": "Agder",
+        "tekst": "Jens Kristian Jensen jens.kristian.jensen@ramirent.no 908 26 336"
+      },
+      {
+        "region": "Vestland",
+        "tekst": "et: Øystein Grov, mobil: 92267234, mail:oystien.grov@ramirent.no"
+      }
+    ],
+    "gyldig_til": null,
+    "sist_oppdatert": null,
+    "status": "har_avtale"
+  },
+  {
+    "id": "rollform",
+    "leverandornavn": "Rollform",
+    "kategori": null,
+    "produkttyper": null,
+    "rabatt_og_bestillingsvilkar": "Prislister",
+    "betalingsfrist": "30",
+    "kontakter": [
+      {
+        "region": null,
+        "tekst": "Daglig Leder Runar Buraas <Runar@rollform.no> - 92635584"
+      }
+    ],
+    "gyldig_til": null,
+    "sist_oppdatert": null,
+    "status": "har_avtale"
+  },
+  {
+    "id": "rockfon",
+    "leverandornavn": "Rockfon",
+    "kategori": "Lydisolering",
+    "produkttyper": "Akustiske løsninger for tak og vegger",
+    "rabatt_og_bestillingsvilkar": "Rabattmatrise",
+    "betalingsfrist": "45",
+    "kontakter": [
+      {
+        "region": null,
+        "tekst": "Ordremail.no@rockfon.com 22 02 40 60 // 22 02 41 33 - Ved større anbud kontakt Mira Nedkvitne Mail: mira.nedkvitne@rockfon.com Tlf: 988 98 030"
+      }
+    ],
+    "gyldig_til": null,
+    "sist_oppdatert": null,
+    "status": "har_avtale"
+  },
+  {
+    "id": "siga-swiss",
+    "leverandornavn": "Siga Swiss",
+    "kategori": "Vind og lufttettning",
+    "produkttyper": "Tape, membraner, lim- og fugemasser, Primer m.m",
+    "rabatt_og_bestillingsvilkar": "Prisliste- egne priser på større anbud",
+    "betalingsfrist": "45",
+    "kontakter": [
+      {
+        "region": "Rogaland",
+        "tekst": "Endre Lindheim <Endre.Lindheim@siga.swiss> 47663267 Agder: Paul Tsigakis Tlf : 48052453 Mail : paul.tsigakis@siga.swiss"
+      }
+    ],
+    "gyldig_til": null,
+    "sist_oppdatert": null,
+    "status": "har_avtale"
+  },
+  {
+    "id": "strai-kjokken",
+    "leverandornavn": "Strai Kjøkken",
+    "kategori": "Kjøkken",
+    "produkttyper": "Kjøkken",
+    "rabatt_og_bestillingsvilkar": "Rabattmatrise 20-40% rabatt, se avtaledokument",
+    "betalingsfrist": "30",
+    "kontakter": [
+      {
+        "region": null,
+        "tekst": "Strai Kjøkken hovedkontor: Christian Tveit christian@strai.no 40888853 Strai Kjøkken Kristiansand: Andre Berg Andre.berg@strai.no 47452005 Strai Kjøkken Arendal: Kurt Anfinnes kurt@strai.no 46702542 Strai Kjøkken Stavanger: Pia Hansen Pia.hansen@strai.no 92244975 Strai Kjøkken Bergen: Silje Lygre Silje.lygre@strai.no 46700126"
+      }
+    ],
+    "gyldig_til": null,
+    "sist_oppdatert": null,
+    "status": "har_avtale"
+  },
+  {
+    "id": "triplan",
+    "leverandornavn": "Triplan",
+    "kategori": "Fullglassvegger m.m",
+    "produkttyper": "Fullglassvegger m.m",
+    "rabatt_og_bestillingsvilkar": "Prismatrise på teams",
+    "betalingsfrist": "45",
+    "kontakter": [
+      {
+        "region": null,
+        "tekst": "David Nielsen dn@triplan + oes@triplan.net +45 27 11 27 27"
+      }
+    ],
+    "gyldig_til": null,
+    "sist_oppdatert": null,
+    "status": "har_avtale"
+  },
+  {
+    "id": "westco-as",
+    "leverandornavn": "Westco as",
+    "kategori": "Avfallshåntering",
+    "produkttyper": "Avfall og gjenvinningstjenester",
+    "rabatt_og_bestillingsvilkar": "Faste priser på småjobber, innhent egne priser ved anbud/prosjekt.",
+    "betalingsfrist": "45",
+    "kontakter": [
+      {
+        "region": null,
+        "tekst": "Ståle Corneliussen tlf: 992 19 996 mail: stale.corneliussen@westcomiljo.no"
+      }
+    ],
+    "gyldig_til": null,
+    "sist_oppdatert": null,
+    "status": "har_avtale"
+  },
+  {
+    "id": "naboen-as",
+    "leverandornavn": "Naboen AS",
+    "kategori": "Utstyr, Verktøy, Maskiner, lift, rengjøring, avfallshåndtering, støv og vannsuger, byggheis, varme, avfukter,strøm, transport",
+    "produkttyper": "Utstyr, Verktøy, Maskiner, lifter, rengjøring, avfallshåndtering, støv og vannsuger, byggheis, varme, avfukter,strøm, transport",
+    "rabatt_og_bestillingsvilkar": "Har egne priser på prosjekt og Ramme. Se prislsite eller kontakt Naboen for pris.",
+    "betalingsfrist": "45",
+    "kontakter": [
+      {
+        "region": null,
+        "tekst": "Øysten Kjellsen, tel: (+47) 911 06 544 epost: oystein.kjellsen@naboen.no"
+      }
+    ],
+    "gyldig_til": null,
+    "sist_oppdatert": null,
+    "status": "har_avtale"
+  },
+  {
+    "id": "service-master-as",
+    "leverandornavn": "Service Master AS",
+    "kategori": "vask, RTB, Renhold",
+    "produkttyper": "Byggvask, Fasadevask, Vinduspuss, RTB, Brakkerengjøring, Renhold",
+    "rabatt_og_bestillingsvilkar": "Prosjektbasert bestillinger: 557,- i timen eks mva, Rammeavtale kr 650 i timen eks mva, Egne priser finnes i mappen. https://mouverno.sharepoint.com/:f:/s/Mouver-Prosjektlederne/Eud9Saif_6hNl27C-WgfFEsB9mYWfpihnnEFoZDuK2E0hg?e=h2jHxS",
+    "betalingsfrist": "45",
+    "kontakter": [
+      {
+        "region": null,
+        "tekst": "kontakt: Abdel Rahim Fakak, Tlf.47 44 99 44, mail abdel@servicemaster.no"
+      }
+    ],
+    "gyldig_til": null,
+    "sist_oppdatert": null,
+    "status": "mangler_avtaledokument"
+  },
+  {
+    "id": "daloc-norge-as",
+    "leverandornavn": "Daloc Norge AS",
+    "kategori": "Dører",
+    "produkttyper": "Dører",
+    "rabatt_og_bestillingsvilkar": "32% rabatt + egne prosjektpriser til anbudsforespørsler",
+    "betalingsfrist": "30",
+    "kontakter": [
+      {
+        "region": null,
+        "tekst": "Ivar Vold - tlf: 93 08 41 00 -Mail: ivar.vold@daloc.no"
+      }
+    ],
+    "gyldig_til": null,
+    "sist_oppdatert": null,
+    "status": "har_avtale"
+  },
+  {
+    "id": "bo-andren-norge-as",
+    "leverandornavn": "Bo Andrén Norge AS",
+    "kategori": "Gulv",
+    "produkttyper": "Parkett",
+    "rabatt_og_bestillingsvilkar": "Prisliste i avtalen, egne priser ved anbud",
+    "betalingsfrist": "30",
+    "kontakter": [
+      {
+        "region": null,
+        "tekst": "Nils Andreas Røher Salg / Prosjektsjef - 98246077 - nar@boandren.no"
+      }
+    ],
+    "gyldig_til": null,
+    "sist_oppdatert": null,
+    "status": "har_avtale"
+  },
+  {
+    "id": "hth-norge",
+    "leverandornavn": "HTH Norge",
+    "kategori": "Kjøkken",
+    "produkttyper": "Kjøkken",
+    "rabatt_og_bestillingsvilkar": "Prisliste i avtalen, egne priser ved anbud",
+    "betalingsfrist": "45",
+    "kontakter": [
+      {
+        "region": null,
+        "tekst": "Espen Karlsen eska@hth.no, Hth Rogaland: Stine Fredriksen stfr@hth.no tlf: 40705298. Suzanne Katrina Pegrum, Skap@hth.no tlf: 40705295, HTH Kjøkken Bergen, Reidar Rundsveen, reru@hth.no mobil 906 66 368 HTH kjøkken Haugesund, Ronnie Clemmensen, rorc@hth.no mobil HTH Kjøkken Kristiansand, Trond Aske mail tras@hth.no mobil 900 72 001901 99 619"
+      }
+    ],
+    "gyldig_til": null,
+    "sist_oppdatert": null,
+    "status": "har_avtale"
+  },
+  {
+    "id": "skau-gulv",
+    "leverandornavn": "Skau gulv",
+    "kategori": "Gulv",
+    "produkttyper": "Parkett, parket laminat, ferdig lagt",
+    "rabatt_og_bestillingsvilkar": "Har egne priser på prosjekt og Ramme. Se prislsite eller kontakt Skau Gulv for pris.",
+    "betalingsfrist": "45",
+    "kontakter": [
+      {
+        "region": null,
+        "tekst": "Kenneth Pedersen , tlf: 40861460, kenneth@skau.com"
+      }
+    ],
+    "gyldig_til": null,
+    "sist_oppdatert": null,
+    "status": "har_avtale"
+  },
+  {
+    "id": "norsk-gjenvinning",
+    "leverandornavn": "Norsk Gjenvinning",
+    "kategori": "Avfallshåndtering",
+    "produkttyper": "Avfall og gjenvinningstjenester",
+    "rabatt_og_bestillingsvilkar": "NGN Prisliste.xlsx",
+    "betalingsfrist": "45 dager",
+    "kontakter": [
+      {
+        "region": "Agder",
+        "tekst": "Tom Løchen tlf +47 91334736, e-post tom.lochen@ngn.no. Rogaland: Iven Austbø +47 48400920 og e-post iven.austbo@ngn.no, Agder: Jan Vidar Vadseth, tlf +47 97553009, Mail: jan.vadseth@ngn.no"
+      }
+    ],
+    "gyldig_til": null,
+    "sist_oppdatert": null,
+    "status": "har_avtale"
+  },
+  {
+    "id": "trapperingen",
+    "leverandornavn": "Trapperingen",
+    "kategori": "Trapp",
+    "produkttyper": "Trapp, Stella serien og øvrige modeller",
+    "rabatt_og_bestillingsvilkar": "Se prisliste, pris gis ved forespørsel",
+    "betalingsfrist": "30 dager",
+    "kontakter": [
+      {
+        "region": "Rogaland",
+        "tekst": "Roy David Thorsen: roydavid.thorsen@trapperingen.no tlf: 92 468 507. Agder: kurtegil.bjorkjendal@trapperingen.no tlf: 91 861 773"
+      }
+    ],
+    "gyldig_til": null,
+    "sist_oppdatert": null,
+    "status": "har_avtale"
+  },
+  {
+    "id": "retura",
+    "leverandornavn": "Retura",
+    "kategori": "Avfallshåndtering",
+    "produkttyper": "Avfall og gjenvinningstjenester",
+    "rabatt_og_bestillingsvilkar": "Vedlegg 1 - Prismatrise Mouver.xlsx",
+    "betalingsfrist": "45 dager",
+    "kontakter": [
+      {
+        "region": null,
+        "tekst": "Daniel Johansson ,Tlf 45473781, mail: Daniel.johansson@retura.no"
+      }
+    ],
+    "gyldig_til": null,
+    "sist_oppdatert": null,
+    "status": "har_avtale"
+  },
+  {
+    "id": "sorbo-industribeslag",
+    "leverandornavn": "Sørbø Industribeslag",
+    "kategori": "Beslag og Festemidler",
+    "produkttyper": "beslag, aluminium, tetting, festemidler",
+    "rabatt_og_bestillingsvilkar": "Pris på forespørsel",
+    "betalingsfrist": "45 dager",
+    "kontakter": [
+      {
+        "region": "Vestland",
+        "tekst": "Sørbø Industribeslag Morten Olsen – Distriktansvarlig Vestland Mob: 917 79 990 Mail: morten.olsen@sorboas.no • Berland Bygg as • Flex Bygg as •"
+      },
+      {
+        "region": "Bergen",
+        "tekst": "Prosjekt og Sotra entreprenør as"
+      },
+      {
+        "region": "Rogaland",
+        "tekst": "Sørbø Industribeslag Norvall Gjellestad – Regionsleder Rogaland/Agder Mob: 479 70 544 Mail: norvall.gjellestad@sorboas.no • Sola Bygg • Sagen Sørbø Industribeslag Rune Stokka – Distriktansvarlig Rogaland Mob: 909 84 069 Mail: rune.stokka@sorboas.no • Faber • Stolt Bolig"
+      },
+      {
+        "region": "Agder",
+        "tekst": "Sørbø Industribeslag Norvall Gjellestad – Regionsleder Rogaland/Agder Mob: 479 70 544 Mail: Norvall.gjellestad@sorboas.no • PK Entreprenør as • HSH Entreprenør as"
+      }
+    ],
+    "gyldig_til": null,
+    "sist_oppdatert": null,
+    "status": "har_avtale"
+  },
+  {
+    "id": "sigdal-kjokken",
+    "leverandornavn": "Sigdal Kjøkken",
+    "kategori": "Kjøkken og garderober",
+    "produkttyper": "Kjøkken og garderober",
+    "rabatt_og_bestillingsvilkar": "Pris på forespørsel hos lokal forhandler",
+    "betalingsfrist": "30",
+    "kontakter": [
+      {
+        "region": null,
+        "tekst": "Tore Størseth Mail: tore.storseth@sigdal.com Tlf.: 476 51 049"
+      }
+    ],
+    "gyldig_til": null,
+    "sist_oppdatert": null,
+    "status": "har_avtale"
+  },
+  {
+    "id": "aubo-kjokken",
+    "leverandornavn": "Aubo Kjøkken",
+    "kategori": "Kjøkken, garderober og bad",
+    "produkttyper": "Kjøkken, bad og garderober",
+    "rabatt_og_bestillingsvilkar": "Pris på førespørsel",
+    "betalingsfrist": "30",
+    "kontakter": [
+      {
+        "region": null,
+        "tekst": "Helene Gilje Salgs- og kategorisjef Kjøkken, bad, garderobe Mobil +47 91 66 78 80 / helene.gilje@optimera.no"
+      }
+    ],
+    "gyldig_til": null,
+    "sist_oppdatert": null,
+    "status": "har_avtale"
+  },
+  {
+    "id": "uldal-as",
+    "leverandornavn": "Uldal AS",
+    "kategori": "Dør og vindu",
+    "produkttyper": "Dør og vindu",
+    "rabatt_og_bestillingsvilkar": null,
+    "betalingsfrist": null,
+    "kontakter": [
+      {
+        "region": "Rogaland",
+        "tekst": "Kalkulatør: Bendik Bigset E-post: bendik.bigset@byggma.no Distriktssjef: Rune Bjørgsvik E-post: rune.bjorgsvik@byggma.no"
+      },
+      {
+        "region": "Vestland",
+        "tekst": "Kalkulatør: Kjetil Finsådal E-post: kjetil.finsaadal@byggma.no Distriktssjef: Rune Bjørgsvik E-post: rune.bjorgsvik@byggma.no"
+      },
+      {
+        "region": "Sørlandet",
+        "tekst": "Kalkulatør: Kjetil Myrvold E-post: kjetil.myrvold@byggma.no Distriktssjef: Helge Bjorland E-post: helge.bjorland@byggma.no"
+      }
+    ],
+    "gyldig_til": null,
+    "sist_oppdatert": null,
+    "status": "har_avtale"
+  },
+  {
+    "id": "arti-konsult",
+    "leverandornavn": "Arti konsult",
+    "kategori": "AI - kurs og div",
+    "produkttyper": "AI",
+    "rabatt_og_bestillingsvilkar": null,
+    "betalingsfrist": null,
+    "kontakter": [
+      {
+        "region": null,
+        "tekst": "Jørgen Helmers Olsen Mail: Jorgen@articonsult.no"
+      }
+    ],
+    "gyldig_til": null,
+    "sist_oppdatert": null,
+    "status": "mangler_avtaledokument"
+  }
+]

@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Finn avtale – Mouver</title>
+<style>
+  :root{
+    --bg:#f7f7f5; --card:#ffffff; --ink:#1c1c1c; --muted:#6b6b6b;
+    --border:#e3e2df; --accent:#1f6f4d; --accent-ink:#ffffff;
+    --badge-ok:#eaf5ee; --badge-ok-ink:#1f6f4d;
+    --badge-warn:#fdf3e3; --badge-warn-ink:#8a5a00;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#151513; --card:#1f1f1d; --ink:#f0efec; --muted:#a5a39c;
+      --border:#33322e; --accent:#4caf7d; --accent-ink:#0c1f16;
+      --badge-ok:#183226; --badge-ok-ink:#8fe0b6;
+      --badge-warn:#332711; --badge-warn-ink:#f0c775;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#151513; --card:#1f1f1d; --ink:#f0efec; --muted:#a5a39c;
+    --border:#33322e; --accent:#4caf7d; --accent-ink:#0c1f16;
+    --badge-ok:#183226; --badge-ok-ink:#8fe0b6;
+    --badge-warn:#332711; --badge-warn-ink:#f0c775;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    padding:20px 16px 60px;
+  }
+  .wrap{max-width:760px; margin:0 auto;}
+  header{margin-bottom:20px;}
+  h1{font-size:1.5rem; margin:0 0 4px;}
+  .sub{color:var(--muted); font-size:0.95rem; margin:0;}
+  .sokboks{
+    background:var(--card); border:1px solid var(--border); border-radius:14px;
+    padding:16px; margin-bottom:18px;
+  }
+  .sokboks label{display:block; font-size:0.85rem; color:var(--muted); margin-bottom:6px;}
+  .sok-rad{display:flex; gap:10px; flex-wrap:wrap;}
+  input[type="search"], select{
+    font-size:1rem; padding:10px 12px; border-radius:10px; border:1px solid var(--border);
+    background:var(--bg); color:var(--ink); flex:1 1 220px; min-width:0;
+  }
+  .antall{margin:4px 2px 14px; color:var(--muted); font-size:0.9rem;}
+  .kort{
+    background:var(--card); border:1px solid var(--border); border-radius:14px;
+    padding:16px; margin-bottom:12px;
+  }
+  .kort-topp{display:flex; justify-content:space-between; align-items:flex-start; gap:10px; flex-wrap:wrap;}
+  .kort h2{font-size:1.1rem; margin:0;}
+  .kategori{color:var(--muted); font-size:0.9rem; margin:2px 0 10px;}
+  .badge{
+    font-size:0.75rem; padding:3px 9px; border-radius:100px; white-space:nowrap;
+    background:var(--badge-ok); color:var(--badge-ok-ink); font-weight:600;
+  }
+  .badge.varsel{background:var(--badge-warn); color:var(--badge-warn-ink);}
+  .felt{margin:8px 0;}
+  .felt-label{font-size:0.75rem; text-transform:uppercase; letter-spacing:.03em; color:var(--muted); margin-bottom:2px;}
+  .felt-verdi{font-size:0.95rem; line-height:1.4;}
+  .kontakter{display:flex; flex-direction:column; gap:6px; margin-top:2px;}
+  .kontakt-region{font-weight:600; font-size:0.85rem;}
+  .tomt, .ingen-treff{color:var(--muted); text-align:center; padding:30px 10px;}
+  .feedback{
+    margin-top:26px; padding:16px; border:1px dashed var(--border); border-radius:14px;
+    text-align:center;
+  }
+  .feedback p{margin:0 0 10px; color:var(--muted); font-size:0.9rem;}
+  button{
+    font-size:0.95rem; padding:10px 16px; border-radius:10px; border:none;
+    background:var(--accent); color:var(--accent-ink); cursor:pointer; font-weight:600;
+  }
+  button:hover{opacity:.92}
+  a{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Finn avtale</h1>
+    <p class="sub">Hva trenger du til prosjektet? Søk på f.eks. «vinduer» eller «verktøy».</p>
+  </header>
+
+  <div class="sokboks">
+    <div class="sok-rad">
+      <div style="flex:1 1 100%">
+        <label for="sok">Søk</label>
+        <input type="search" id="sok" placeholder="F.eks. vindu, verktøy, kjøkken …">
+      </div>
+    </div>
+    <div class="sok-rad" style="margin-top:10px">
+      <div>
+        <label for="kategori-filter">Kategori</label>
+        <select id="kategori-filter">
+          <option value="">Alle kategorier</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <p class="antall" id="antall"></p>
+  <div id="resultater"></div>
+
+  <div class="feedback">
+    <p>Fant du ikke det du lette etter?</p>
+    <button id="meld-behov">Meld fra om manglende avtale</button>
+  </div>
+</div>
+
+<script>
+const KONTAKT_EPOST = "aaamirmokri@gmail.com"; // midlertidig: erstatt med riktig Mouver-adresse for behovsmeldinger
+
+let AVTALER = [];
+
+function normaliser(s){
+  if(!s) return "";
+  return s.toLowerCase()
+    .replaceAll("æ","ae").replaceAll("ø","o").replaceAll("å","a")
+    .normalize("NFKD").replace(/[̀-ͯ]/g, "");
+}
+
+function forstOrd(kategoriFelt){
+  // Kategori-feltet kan inneholde flere kommaseparerte kategorier – bruk hver som eget filteralternativ
+  if(!kategoriFelt) return [];
+  return kategoriFelt.split(",").map(s => s.trim()).filter(Boolean);
+}
+
+function byggKategoriFilter(){
+  const alle = new Set();
+  AVTALER.forEach(a => forstOrd(a.kategori).forEach(k => alle.add(k)));
+  const select = document.getElementById("kategori-filter");
+  [...alle].sort((a,b)=>a.localeCompare("no")).forEach(k => {
+    const opt = document.createElement("option");
+    opt.value = k; opt.textContent = k;
+    select.appendChild(opt);
+  });
+}
+
+function matcherSok(avtale, sokNorm){
+  if(!sokNorm) return true;
+  const felt = [avtale.leverandornavn, avtale.kategori, avtale.produkttyper]
+    .map(normaliser).join(" ");
+  return sokNorm.split(/\s+/).every(ord => felt.includes(ord));
+}
+
+function matcherKategori(avtale, kategoriValgt){
+  if(!kategoriValgt) return true;
+  return forstOrd(avtale.kategori).includes(kategoriValgt);
+}
+
+function renderKontakter(kontakter){
+  if(!kontakter || !kontakter.length) return "<div class='felt-verdi'>Ikke registrert</div>";
+  return "<div class='kontakter'>" + kontakter.map(k => `
+    <div>
+      ${k.region ? `<div class="kontakt-region">${escapeHtml(k.region)}</div>` : ""}
+      <div>${escapeHtml(k.tekst)}</div>
+    </div>
+  `).join("") + "</div>";
+}
+
+function escapeHtml(s){
+  const d = document.createElement("div");
+  d.textContent = s ?? "";
+  return d.innerHTML;
+}
+
+function renderKort(avtale){
+  const manglerAvtale = avtale.status === "mangler_avtaledokument";
+  return `
+    <div class="kort">
+      <div class="kort-topp">
+        <h2>${escapeHtml(avtale.leverandornavn)}</h2>
+        ${manglerAvtale
+          ? `<span class="badge varsel">Avtaledokument ikke mottatt ennå</span>`
+          : `<span class="badge">Aktiv avtale</span>`}
+      </div>
+      ${avtale.kategori ? `<p class="kategori">${escapeHtml(avtale.kategori)}</p>` : ""}
+
+      ${avtale.produkttyper ? `
+      <div class="felt">
+        <div class="felt-label">Produkttyper</div>
+        <div class="felt-verdi">${escapeHtml(avtale.produkttyper)}</div>
+      </div>` : ""}
+
+      ${avtale.rabatt_og_bestillingsvilkar ? `
+      <div class="felt">
+        <div class="felt-label">Rabatt- og bestillingsvilkår</div>
+        <div class="felt-verdi">${escapeHtml(avtale.rabatt_og_bestillingsvilkar)}</div>
+      </div>` : ""}
+
+      ${avtale.betalingsfrist ? `
+      <div class="felt">
+        <div class="felt-label">Betalingsfrist</div>
+        <div class="felt-verdi">${escapeHtml(avtale.betalingsfrist)}</div>
+      </div>` : ""}
+
+      <div class="felt">
+        <div class="felt-label">Kontaktperson</div>
+        ${renderKontakter(avtale.kontakter)}
+      </div>
+    </div>
+  `;
+}
+
+function oppdaterVisning(){
+  const sokNorm = normaliser(document.getElementById("sok").value.trim());
+  const kategoriValgt = document.getElementById("kategori-filter").value;
+
+  const treff = AVTALER.filter(a => matcherSok(a, sokNorm) && matcherKategori(a, kategoriValgt));
+
+  document.getElementById("antall").textContent =
+    treff.length === AVTALER.length
+      ? `${AVTALER.length} leverandøravtaler`
+      : `${treff.length} av ${AVTALER.length} avtaler`;
+
+  const container = document.getElementById("resultater");
+  if(!treff.length){
+    container.innerHTML = `<div class="ingen-treff">Ingen avtaler matchet søket. Prøv et annet ord, eller meld fra nedenfor.</div>`;
+    return;
+  }
+  container.innerHTML = treff.map(renderKort).join("");
+}
+
+function meldBehov(){
+  const sok = document.getElementById("sok").value.trim();
+  const emne = encodeURIComponent("Finn avtale – fant ikke det jeg lette etter");
+  const kropp = encodeURIComponent(
+    `Søkeord jeg brukte: ${sok || "(ingen tekst skrevet inn)"}\n` +
+    `Kategori valgt: ${document.getElementById("kategori-filter").value || "(ingen)"}\n\n` +
+    `Beskriv gjerne kort hva du trengte:\n`
+  );
+  window.location.href = `mailto:${KONTAKT_EPOST}?subject=${emne}&body=${kropp}`;
+}
+
+async function init(){
+  const res = await fetch("data/avtaler.json");
+  AVTALER = await res.json();
+  AVTALER.sort((a,b) => a.leverandornavn.localeCompare(b.leverandornavn, "no"));
+  byggKategoriFilter();
+  oppdaterVisning();
+
+  document.getElementById("sok").addEventListener("input", oppdaterVisning);
+  document.getElementById("kategori-filter").addEventListener("change", oppdaterVisning);
+  document.getElementById("meld-behov").addEventListener("click", meldBehov);
+}
+
+init();
+</script>
+</body>
+</html>
