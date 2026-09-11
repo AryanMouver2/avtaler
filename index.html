@@ -36,40 +36,66 @@
   a{color:var(--accent)}
   button{font-family:inherit;}
 
-  .topplinje{
-    background:var(--card); border-bottom:1px solid var(--border);
-    padding:14px 16px;
-  }
-  .topplinje-inner{
-    max-width:760px; margin:0 auto; display:flex; align-items:center; gap:10px;
-  }
-  .topplinje img{height:20px; width:auto; display:block;}
-  .topplinje .skille{color:var(--border); font-size:1.1rem;}
-  .topplinje span.tittel{font-weight:600; font-size:0.95rem;}
+  .app{max-width:1180px; margin:0 auto; display:flex; align-items:flex-start;}
 
-  .wrap{max-width:760px; margin:0 auto; padding:24px 16px 0;}
-
-  h1{font-size:1.4rem; margin:0 0 4px;}
-  .sub{color:var(--muted); font-size:0.95rem; margin:0 0 20px;}
-
-  .verktoy{
-    display:flex; gap:10px; flex-wrap:wrap; margin-bottom:6px;
+  .sidebar{
+    flex:0 0 270px; padding:20px 20px 40px; background:#202020; color:#f5efe7;
+    position:sticky; top:0; align-self:flex-start; height:100vh; overflow-y:auto;
   }
+  .sidebar-logo{height:22px; width:auto; display:block; margin-bottom:20px;}
+  .sidebar h1{font-size:1.2rem; margin:0 0 4px; color:#f5efe7;}
+  .sidebar .sub{color:#b9b3a8; font-size:0.83rem; margin:0 0 18px; line-height:1.4;}
+
   input[type="search"], select{
     font-size:0.95rem; padding:9px 11px; border-radius:8px; border:1px solid var(--border);
-    background:var(--bg); color:var(--ink);
+    background:var(--bg); color:var(--ink); width:100%;
   }
-  input[type="search"]{flex:1 1 260px; min-width:0;}
-  select{flex:0 0 auto;}
+  .sidebar input[type="search"]{
+    background:#2b2b29; border-color:#3d3c38; color:#f5efe7;
+  }
+  .sidebar input[type="search"]::placeholder{color:#8a8780;}
+
+  .kategori-liste{display:flex; flex-direction:column; gap:1px; margin-top:18px;}
+  .kat-tittel{
+    font-size:0.72rem; text-transform:uppercase; letter-spacing:.04em;
+    color:#8a8780; margin:0 0 6px 2px;
+  }
+  .kat-link{
+    display:block; width:100%; text-align:left; background:none; border:none;
+    border-left:2px solid transparent; border-radius:0 6px 6px 0;
+    padding:7px 10px; font-size:0.87rem; color:#d9d4ca; cursor:pointer;
+  }
+  .kat-link:hover{background:#2b2b29; color:#f5efe7;}
+  .kat-link.aktiv{border-left-color:var(--accent); background:#2b2b29; font-weight:600; color:var(--accent);}
+
+  .innhold{flex:1; min-width:0; padding:22px 24px 40px;}
 
   .rad-under-sok{
     display:flex; justify-content:space-between; align-items:center;
-    margin:12px 2px 18px; flex-wrap:wrap; gap:8px;
+    margin:0 2px 18px; flex-wrap:wrap; gap:8px;
   }
   .antall{color:var(--muted); font-size:0.88rem;}
   .tilbakestill{
     background:none; border:none; color:var(--muted); font-size:0.85rem;
     text-decoration:underline; cursor:pointer; padding:0;
+  }
+  #sorter-valg{width:auto;}
+
+  @media (max-width:840px){
+    .app{flex-direction:column;}
+    .sidebar{
+      position:static; height:auto; width:100%; border-right:none;
+      border-bottom:1px solid var(--border); padding:16px 16px 20px;
+    }
+    .kategori-liste{
+      flex-direction:row; flex-wrap:wrap; gap:6px; margin-top:12px;
+    }
+    .kat-link{
+      width:auto; border-left:none; border:1px solid #3d3c38; border-radius:100px;
+      padding:6px 12px;
+    }
+    .kat-link.aktiv{background:var(--accent); color:#20160a; border-color:transparent;}
+    .innhold{padding:20px 16px 40px;}
   }
 
   .seksjon-tittel{
@@ -134,7 +160,7 @@
   .hovedknapp:hover{opacity:.9}
 
   @media print{
-    .topplinje, .verktoy, .rad-under-sok, .feedback{display:none !important;}
+    .sidebar, .rad-under-sok, .feedback{display:none !important;}
     body.print-single .kort:not(.print-target){display:none !important;}
     body.print-single .kort.print-target{border:1px solid #999; box-shadow:none;}
   }
@@ -142,40 +168,37 @@
 </head>
 <body>
 
-<div class="topplinje">
-  <div class="topplinje-inner">
-    <img src="assets/mouver-logo.jpg" alt="Mouver">
-    <span class="skille">/</span>
-    <span class="tittel">Finn avtale</span>
-  </div>
-</div>
+<div class="app">
+  <aside class="sidebar">
+    <img class="sidebar-logo" src="assets/mouver-logo.jpg" alt="Mouver">
+    <h1>Finn avtale</h1>
+    <p class="sub">Hva trenger du til prosjektet?</p>
+    <input type="search" id="sok" placeholder="Søk på leverandør, produkt …">
+    <nav class="kategori-liste" id="kategori-liste">
+      <p class="kat-tittel">Kategorier</p>
+      <!-- fylles av JS -->
+    </nav>
+  </aside>
 
-<div class="wrap">
-  <h1>Finn avtale</h1>
-  <p class="sub">Hva trenger du til prosjektet? Søk på f.eks. «vindu» eller «verktøy», eller velg en kategori.</p>
+  <main class="innhold">
+    <div class="rad-under-sok">
+      <p class="antall" id="antall"></p>
+      <div style="display:flex; align-items:center; gap:10px;">
+        <button class="tilbakestill" id="tilbakestill" hidden>Tilbakestill filter</button>
+        <select id="sorter-valg">
+          <option value="alfabetisk">Sorter: A–Å</option>
+          <option value="mest-brukt">Sorter: Mest brukt</option>
+        </select>
+      </div>
+    </div>
 
-  <div class="verktoy">
-    <input type="search" id="sok" placeholder="Søk på leverandør, produkt eller kategori …">
-    <select id="kategori-valg">
-      <option value="">Alle kategorier</option>
-    </select>
-    <select id="sorter-valg">
-      <option value="alfabetisk">Sorter: A–Å</option>
-      <option value="mest-brukt">Sorter: Mest brukt</option>
-    </select>
-  </div>
+    <div id="resultater"></div>
 
-  <div class="rad-under-sok">
-    <p class="antall" id="antall"></p>
-    <button class="tilbakestill" id="tilbakestill" hidden>Tilbakestill filter</button>
-  </div>
-
-  <div id="resultater"></div>
-
-  <div class="feedback">
-    <p>Fant du ikke det du lette etter?</p>
-    <button class="hovedknapp" id="meld-behov">Meld fra om manglende avtale</button>
-  </div>
+    <div class="feedback">
+      <p>Fant du ikke det du lette etter?</p>
+      <button class="hovedknapp" id="meld-behov">Meld fra om manglende avtale</button>
+    </div>
+  </main>
 </div>
 
 <script>
@@ -184,6 +207,8 @@ const LS_FAVORITTER = "finnavtale_favoritter";
 const LS_BRUK = "finnavtale_bruk";
 
 let AVTALER = [];
+let AKTIV_KATEGORI = "";
+let TVUNGET_VISNING = false; // true når siden åpnes via en delt lenke til én avtale (#id)
 
 function hentFavoritter(){
   try{ return new Set(JSON.parse(localStorage.getItem(LS_FAVORITTER) || "[]")); }
@@ -209,14 +234,31 @@ function normaliser(s){
     .normalize("NFKD").replace(/[̀-ͯ]/g, "");
 }
 
-function byggKategoriValg(){
+function byggKategoriListe(){
   const alle = new Set();
   AVTALER.forEach(a => (a.kategori_tags || []).forEach(k => alle.add(k)));
-  const select = document.getElementById("kategori-valg");
+  const nav = document.getElementById("kategori-liste");
+
+  const alleKnapp = document.createElement("button");
+  alleKnapp.className = "kat-link aktiv";
+  alleKnapp.textContent = "Alle kategorier";
+  alleKnapp.dataset.kategori = "";
+  nav.appendChild(alleKnapp);
+
   [...alle].sort((a,b)=>a.localeCompare("no")).forEach(k => {
-    const opt = document.createElement("option");
-    opt.value = k; opt.textContent = k;
-    select.appendChild(opt);
+    const knapp = document.createElement("button");
+    knapp.className = "kat-link";
+    knapp.textContent = k;
+    knapp.dataset.kategori = k;
+    nav.appendChild(knapp);
+  });
+
+  nav.addEventListener("click", (e) => {
+    const knapp = e.target.closest(".kat-link");
+    if(!knapp) return;
+    AKTIV_KATEGORI = knapp.dataset.kategori;
+    [...nav.querySelectorAll(".kat-link")].forEach(el => el.classList.toggle("aktiv", el === knapp));
+    oppdaterVisning();
   });
 }
 
@@ -227,9 +269,9 @@ function matcherSok(avtale, sokNorm){
   return sokNorm.split(/\s+/).every(ord => felt.includes(ord));
 }
 
-function matcherKategori(avtale, kategoriValgt){
-  if(!kategoriValgt) return true;
-  return (avtale.kategori_tags || []).includes(kategoriValgt);
+function matcherKategori(avtale){
+  if(!AKTIV_KATEGORI) return true;
+  return (avtale.kategori_tags || []).includes(AKTIV_KATEGORI);
 }
 
 function escapeHtml(s){
@@ -320,14 +362,24 @@ function midlertidigTekst(el, tekst, varighetMs=1500){
 
 function oppdaterVisning(){
   const sokNorm = normaliser(document.getElementById("sok").value.trim());
-  const kategoriValgt = document.getElementById("kategori-valg").value;
   const sortValg = document.getElementById("sorter-valg").value;
   const favoritter = hentFavoritter();
   const bruk = hentBrukstall();
+  const harFilter = Boolean(sokNorm || AKTIV_KATEGORI || TVUNGET_VISNING);
 
-  document.getElementById("tilbakestill").hidden = !(sokNorm || kategoriValgt);
+  document.getElementById("tilbakestill").hidden = !harFilter;
 
-  let treff = AVTALER.filter(a => matcherSok(a, sokNorm) && matcherKategori(a, kategoriValgt));
+  const container = document.getElementById("resultater");
+
+  // Frontpage skal ikke dumpe alle 38 avtalene med det samme – bare vise noe
+  // når personen faktisk har søkt eller valgt en kategori.
+  if(!harFilter){
+    document.getElementById("antall").textContent = `${AVTALER.length} leverandøravtaler tilgjengelig`;
+    container.innerHTML = `<div class="tomt">Søk i feltet til venstre, eller velg en kategori, for å se leverandøravtaler.</div>`;
+    return;
+  }
+
+  let treff = AVTALER.filter(a => matcherSok(a, sokNorm) && matcherKategori(a));
 
   if(sortValg === "mest-brukt"){
     treff = treff.slice().sort((a,b) => (bruk[b.id]||0) - (bruk[a.id]||0) || a.leverandornavn.localeCompare(b.leverandornavn, "no"));
@@ -335,12 +387,8 @@ function oppdaterVisning(){
     treff = treff.slice().sort((a,b) => a.leverandornavn.localeCompare(b.leverandornavn, "no"));
   }
 
-  document.getElementById("antall").textContent =
-    treff.length === AVTALER.length
-      ? `${AVTALER.length} leverandøravtaler`
-      : `${treff.length} av ${AVTALER.length} avtaler`;
+  document.getElementById("antall").textContent = `${treff.length} av ${AVTALER.length} avtaler`;
 
-  const container = document.getElementById("resultater");
   if(!treff.length){
     container.innerHTML = `<div class="ingen-treff">Ingen avtaler matchet søket. Prøv et annet ord, eller meld fra nedenfor.</div>`;
     return;
@@ -415,28 +463,35 @@ function settOppHandlinger(){
 
 function apneFraLenke(){
   const id = location.hash.replace("#", "");
-  if(!id) return;
+  if(!id) return false;
+  TVUNGET_VISNING = true;
   setTimeout(() => {
     const el = document.getElementById(id);
     if(el){ el.scrollIntoView({behavior:"smooth", block:"center"}); el.style.outline = `2px solid var(--accent)`; }
   }, 100);
+  return true;
 }
 
 async function init(){
   const res = await fetch("data/avtaler.json");
   AVTALER = await res.json();
 
-  byggKategoriValg();
+  byggKategoriListe();
   settOppHandlinger();
-  oppdaterVisning();
   apneFraLenke();
+  oppdaterVisning();
 
-  document.getElementById("sok").addEventListener("input", oppdaterVisning);
-  document.getElementById("kategori-valg").addEventListener("change", oppdaterVisning);
+  document.getElementById("sok").addEventListener("input", () => {
+    TVUNGET_VISNING = false;
+    oppdaterVisning();
+  });
   document.getElementById("sorter-valg").addEventListener("change", oppdaterVisning);
   document.getElementById("tilbakestill").addEventListener("click", () => {
     document.getElementById("sok").value = "";
-    document.getElementById("kategori-valg").value = "";
+    AKTIV_KATEGORI = "";
+    TVUNGET_VISNING = false;
+    document.querySelectorAll(".kat-link").forEach(el =>
+      el.classList.toggle("aktiv", el.dataset.kategori === ""));
     oppdaterVisning();
   });
   document.getElementById("meld-behov").addEventListener("click", () => {
@@ -444,7 +499,7 @@ async function init(){
     const emne = encodeURIComponent("Finn avtale – fant ikke det jeg lette etter");
     const kropp = encodeURIComponent(
       `Søkeord jeg brukte: ${sok || "(ingen tekst skrevet inn)"}\n` +
-      `Kategori valgt: ${document.getElementById("kategori-valg").value || "(ingen)"}\n\n` +
+      `Kategori valgt: ${AKTIV_KATEGORI || "(ingen)"}\n\n` +
       `Beskriv gjerne kort hva du trengte:\n`
     );
     window.location.href = `mailto:${KONTAKT_EPOST}?subject=${emne}&body=${kropp}`;
